@@ -1,0 +1,65 @@
+/* تغيير لون الهيدر */
+table.dataTable thead {
+  /*background-color: #14532d; green-900*/
+  background-color: #166534;
+  color: white;
+  font-size: 16px;
+}
+
+table.dataTable td,
+table.dataTable th {
+    text-align: center !important;
+    
+}
+
+
+button.dt-paging-button:hover {
+  background-color: #3E6E5C !important;
+   -webkit-text-fill-color: #fff !important; /* لبعض المتصفحات */
+  border-color: #3E6E5C !important;
+
+   /* إضافات لتأكيد التأثير */
+  background-image: none !important;  /* لو فيه تدرج من Bootstrap */
+  box-shadow: none !important;        /* لو فيه ظل يغطي اللون */
+  opacity: 1 !important;              /* تأكد إنه واضح */
+}
+
+
+button.dt-paging-button.current{
+
+  background-color: #166534 !important;
+  border:1px solid #166534 !important;
+   -webkit-text-fill-color: #ffffff !important; /* للسيطرة على النص في بعض المتصفحات */
+
+}
+
+
+div.dt-search{
+  margin-right: 50px;
+}
+
+
+
+div.dt-search input#dt-search-0.dt-input:focus{
+  background: none;
+  outline: none;
+  border: 2px solid #4CAF50 !important;
+  box-shadow: none !important; 
+}
+
+div.dt-length select#dt-length-0.dt-input{
+  width:50px;
+  font-size: 17px;
+}
+
+div.dt-length select#dt-length-0.dt-input:focus{
+  box-shadow: none !important;
+  outline: none;
+  border: 2px solid #4CAF50 !important;
+}
+
+
+
+
+
+
