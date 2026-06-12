@@ -1,0 +1,80 @@
+
+.swiper-pagination{
+  
+    --swiper-pagination-color:green;
+   
+
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+     
+    overflow: hidden;
+   
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    
+     transition: 0.3s;
+}
+
+/* غيّر لون الأسهم */
+.swiper-button-next,
+.swiper-button-prev {
+   --swiper-navigation-color: green;
+    width: 50px;   /* العرض */
+  height: 50px;  /* الطول */
+  --swiper-navigation-size: 32px; /* حجم الأيقونة (للرمز نفسه) */
+ 
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+ 
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+
+/* موبايل */
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 40% !important;
+  }
+}
+
+/* تابلت */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 30% !important;
+  }
+}
+
+/* ديسكتوب */
+@media (min-width: 1025px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 25% !important;
+  }
+}
+
+
+
+
+/*.swiper-slide:hover {
+  transform: translateY(-159px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.70);
+  cursor: pointer; /* يحسن تجربة المستخدم 
+} */
+
+
+
+
+

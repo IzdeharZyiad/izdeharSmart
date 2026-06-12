@@ -15,13 +15,14 @@ $(document).ready(function () {
             className: 'text-center',
         },
 
-         {
-            targets: 5,      // أول عمود (يبدأ من 0)
-            orderable: false ,// تعطيل الترتيب
-            className: 'text-center',
-        }
+        
     ],
     pageLength: 5,
-    lengthMenu: [5, 10, 25, 50, 100]
+lengthMenu: [
+    [5, 10, 25, 50, 100, -1],
+    [5, 10, 25, 50, 100, "الكل"]
+]
+   
+
   });
 });

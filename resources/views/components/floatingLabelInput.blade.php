@@ -1,21 +1,19 @@
-@props(['id', 'name', 'type' => 'text', 'placeholder' => ' ', 'icon' => 'fas fa-user', 'labelValue' , 'value'])
+@props(['id', 'name', 'type' => 'text', 'placeholder' => ' ', 'icon' => 'fas fa-user', 'labelValue', 'value' => ''])
 
-<div class="max-w-sm md:max-w-md mt-5 m-auto relative flex flex-col " dir="rtl">
+<div class=" mt-5 m-auto  relative flex flex-col " dir="rtl">
 
 
 
-    <input id="{{ $id }}" type="{{ $type }}" name="{{ $name }}" 
-     {{-- value أولية فقط --}}
-    value="{{ $type === 'date' ? $value : '' }}"
-     {{ $attributes }}  x-bind:disabled="disabled" 
+    <input id="{{ $id }}" type="{{ $type }}" name="{{ $name }}" {{-- value أولية فقط --}}
+        value="{{ $type === 'date' ? $value : $value }}" {{ $attributes }} x-bind:disabled="disabled"
         {{ $attributes->merge([
             'class' =>
                 'peer  px-2.5 pb-2.5 pt-4 lg:w-full bg-transparent appearance-none border-2 border-gray-300 
-                 
-                                 focus:outline-none focus:ring-0 focus:border-[#2F5D50]' .
+                                                                                                                                                 
+                                                                                                                                                                 focus:outline-none focus:ring-0 focus:border-[#2F5D50]' .
                 ($errors->has($name) ? ' border-red-400  shadow-md ' : ''),
         ]) }}
-        placeholder=" " >
+        placeholder=" ">
 
     <label for="{{ $id }}"
         class=" absolute 

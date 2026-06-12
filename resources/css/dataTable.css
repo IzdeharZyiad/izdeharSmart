@@ -6,11 +6,15 @@ table.dataTable thead {
   font-size: 16px;
 }
 
+
 table.dataTable td,
 table.dataTable th {
     text-align: center !important;
     
 }
+
+
+
 
 
 button.dt-paging-button:hover {
@@ -59,6 +63,40 @@ div.dt-length select#dt-length-0.dt-input:focus{
 }
 
 
+
+
+
+@media (max-width: 768px) {
+  .dataTables_wrapper {
+    overflow-x: auto;
+  }
+
+  table.dataTable {
+    width: 100% !important;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  table.dataTable thead {
+    font-size: 14px;
+  }
+
+  table.dataTable td,
+  table.dataTable th {
+    font-size: 13px;
+    padding: 8px !important;
+  }
+
+  div.dt-search {
+    margin-right: 10px;
+  }
+
+  div.dt-length select#dt-length-0.dt-input {
+    font-size: 14px;
+  }
+}
 
 
 

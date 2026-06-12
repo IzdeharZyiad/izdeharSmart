@@ -1,0 +1,95 @@
+@extends('welcome')
+
+@section('title')
+    اضافة احجام وكميات
+@endSection
+
+@section('navbar-row')
+    <div class=" flex flex-col justify-center md:hidden">
+        <!-- center in sm -->
+        <div class="flex mr-2 space-x-3 ">
+
+            <x-link-nav :href="route('types.items', ['typeId' => $item->type_id])" :active="request()->routeIs('types.items', ['typeId' => $item->id])" icon="fa-solid fa-building">{{ $item->name }}</x-link-nav>
+
+            <x-link-nav :href="route('types.items.products', ['itemId' => $product->item_id])" :active="request()->routeIs('types.items.products', ['itemId' => $product->item_id])" icon="fa-solid fa-building">{{ $product->name }}</x-link-nav>
+
+
+
+
+        </div>
+
+    </div>
+    <!-- center in md and above -->
+    <div class="hidden  flex items-center  md:inline-flex ">
+
+        <div class="flex mr-2 space-x-3">
+
+            <x-link-nav :href="route('types.items', ['typeId' => $item->type_id])" :active="request()->routeIs('types.items', ['typeId' => $item->id])" icon="fa-solid fa-building">{{ $item->name }}</x-link-nav>
+
+            <x-link-nav :href="route('types.items.products', ['itemId' => $product->item_id])" :active="request()->routeIs('types.items.products', ['itemId' => $product->item_id])" icon="fa-solid fa-building">{{ $product->name }}</x-link-nav>
+
+        </div>
+
+
+
+
+    </div>
+@endSection
+
+@section('content')
+    <div class="flex flex-col h-full  ">
+        <div class="flex justify-start mr-2 mt-4 border-b border-gray-200">
+            <x-heading value="اضافة احجام وكميات" />
+        </div>
+
+        <div class="flex-1 flex flex-col  overflow-y-auto custom-scroll md:items-center">
+            <div class=" md:w-lg  lg:w-3xl">
+                <form action="{{ route('types.items.storeProductDetails') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div>
+                        @if (session('error'))
+                            <x-alert-danger value="{{ session('error') }}" />
+                        @endif
+
+                        @if (session('success'))
+                            <x-alert-sucess value="{{ session('success') }}" />
+                        @endif
+                    </div>
+
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+                    <livewire:size-product />
+
+                    <x-floatingLabelInput id="Quantity" name="Quantity" labelValue="الكمية" icon="fa-solid fa-hashtag" />
+
+
+                    <x-floatingLabelInput id="sale_price" name="sale_price" labelValue="سعر البيع للمنتج"
+                        icon="fa-solid fa-money-bill" />
+
+                    <x-floatingLabelInput id="lessQuantity" name="lessQuantity" labelValue="أقل كمية مسموح بها"
+                        icon="fa-solid fa-hashtag" />
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="flex justify-center mt-5">
+                        <x-primary-button>اضافة</x-primary-button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+@endSection

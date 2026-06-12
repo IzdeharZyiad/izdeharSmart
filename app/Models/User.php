@@ -3,14 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Model
 {
-    
     protected $fillable = [
         'name',
         'idNumber',
@@ -18,11 +14,21 @@ class User extends Model
         'joinDate',
         'salary_type',
         'salary_amount',
-        'department',
-        'balance',
-
+        'admin_id',
     ];
 
-   
-    
+    public function salaryCycles()
+    {
+        return $this->hasMany(SalaryCycle::class);
+    }
+
+    public function attendance()
+    {
+        return $this->hasMany(Attendance::class);
+    }
+
+    public function advance()
+    {
+        return $this->hasMany(Advance::class);
+    }
 }

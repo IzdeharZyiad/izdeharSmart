@@ -1,20 +1,16 @@
-@props(['active' , 'icon' => 'fas fa-user'])
+@props(['active', 'icon' => 'fas fa-user'])
 
 @php
-$classes = ($active ?? false)
-            ? 'inline-flex items-center  text-md font-bold px-1 pt-2 mt-2 border-b-2 border-green-800 text-green-900'
-            :'inline-flex items-center text-md font-medium" px-1 pt-2 mt-2 border-b-2  border-transparent  leading-5 text-green-950
-             hover:border-green-800 hover:text-green-700  hover:pb-4 hover:mt-4  transition duration-150 ease-in-out';
+    $classes =
+        $active ?? false
+            ? 'inline-flex items-center text-md md:text-sm md:mt-3 font-bold  px-1 pt-2 mt-3 pb-4 border-b-3 border-green-800 text-green-900'
+            : 'inline-flex items-center text-md font-medium" md:mt-3  md:text-sm px-1 pt-2 mt-2 border-b-2  border-transparent  leading-5 text-green-950
+             hover:border-green-800 hover:text-green-700  hover:pb-4 hover:mt-4 transition duration-150 ease-in-out';
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
-     <i class="{{ $icon }} ml-2 mb-1 text-md :text-inherit "></i>
+    <i class="{{ $icon }} ml-2 mb-1 text-md :text-inherit "></i>
     {{ $slot }}
 
-    
+
 </a>
-
-
-
-
-    
